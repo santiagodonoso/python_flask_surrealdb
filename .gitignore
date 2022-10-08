@@ -1,4 +1,6 @@
 Include
 Lib
 Scripts
+data
+surreal.exe
 .gitignore

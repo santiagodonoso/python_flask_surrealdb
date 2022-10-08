@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="{{ url_for('static',filename='favicon.ico') }}" type="image/x-icon">
+  <link rel="stylesheet" href="{{ url_for('static',filename='app.css') }}">
+  <title>{{title}}</title>
+</head>
+<body>
+  
+  <nav>
+    <a href="/">
+      Flask
+      <span class="purple">and</span> 
+      SurrealDB
+    </a>
+  </nav>
+
+  <section>
+    <form class="create_item" onsumit="return false">
+      <input type="text" placeholder="item name">
+      <input type="text" placeholder="item price">
+      <button>Create item</button>
+    </form>
+  </section>
+
+  <main>
+
+    {% for item in items %}
+      <form class="item" onsubmit="delete_item(); return false">
+        <input name="item_id" style="display: none;" type="text" value="{{item['id']}}">
+        <input name="item_name" type="text" value="{{item['name']}}">
+        <input name="item_price" type="text" value="{{item['price']}}">
+        <button class="simple_button">🗑️</button>
+      </form>
+    {% endfor %}
+
+  </main>
+
+  <footer></footer>
+
+  <script src="{{ url_for('static',filename='app.js') }}"></script>
+
+</body>
+</html>
