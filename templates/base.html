@@ -19,20 +19,20 @@
   </nav>
 
   <section>
-    <form class="create_item" onsumit="return false">
-      <input type="text" placeholder="item name">
-      <input type="text" placeholder="item price">
+    <form autocomplete="off"  class="create_item" onsubmit="create_item(); return false">
+      <input name="item_name" type="text" placeholder="item name">
+      <input name="item_price" type="text" placeholder="item price">
       <button>Create item</button>
     </form>
   </section>
 
-  <main>
+  <main id="items">
 
     {% for item in items %}
-      <form class="item" onsubmit="delete_item(); return false">
+      <form autocomplete="off" class="item" onsubmit="delete_item(); return false">
         <input name="item_id" style="display: none;" type="text" value="{{item['id']}}">
-        <input name="item_name" type="text" value="{{item['name']}}">
-        <input name="item_price" type="text" value="{{item['price']}}">
+        <input name="item_name" oninput="update_item()" type="text" value="{{item['name']}}">
+        <input name="item_price" oninput="update_item()" type="text" value="{{item['price']}}">
         <button class="simple_button">🗑️</button>
       </form>
     {% endfor %}

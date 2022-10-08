@@ -1,2 +1,15 @@
 #V2
 SELECT * FROM item
+CREATE item SET name="One", price=10
+CREATE item SET name="Two", price=20
+CREATE item SET name="Three", price=30
+DELETE item
+CREATE item SET name="One", price=10, created_at=now()
+CREATE item SET name="One", price=10, created_at=time()
+CREATE item SET name="One", price=10, created_at=time::now()
+CREATE item SET name="Two", price=20, created_at=time()
+CREATE item SET name="Two", price=20, created_at=time::now()
+CREATE item SET name="Three", price=30, created_at=time::now()
+CREATE item SET name="Four", price=40, created_at=time::now()
+SELECT * FROM item
+DELETE item:hqebwon1f0tmz62todrb
