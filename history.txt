@@ -13,3 +13,4 @@ CREATE item SET name="Three", price=30, created_at=time::now()
 CREATE item SET name="Four", price=40, created_at=time::now()
 SELECT * FROM item
 DELETE item:hqebwon1f0tmz62todrb
+SELECT * FROM item
