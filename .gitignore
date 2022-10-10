@@ -4,3 +4,4 @@ Scripts
 data
 surreal.exe
 .gitignore
+__pycache__
